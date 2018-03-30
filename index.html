@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600|Shadows+Into+Light+Two" rel="stylesheet">
+</head>
+<body>
+
+   <section class="wrapper">
+       <button id="write">write post</button>
+       <form id="form">
+            <h2>Fill in your Journal Entry</h2>
+            <label name="task">Entry Title</label>
+            <input type="text" name="name" id="name">
+
+            <label for="date">Today's Date</label>
+            <input type="date" name="date" id="date">
+
+            <textarea name="task" id="task" cols="30" rows="10"></textarea>
+        
+            <button type="submit">Submit</button>
+            <input type="color" name="colour" id="colour">
+        </form>
+   </section>
+    <section class="messages" id="post">
+        <!-- inputs go here -->
+    </section>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
