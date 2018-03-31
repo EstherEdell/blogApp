@@ -18,14 +18,11 @@ function submitForm(e){
     let task = getInputVal('task');
     let name = getInputVal('name');
     let date = getInputVal('date');
-    let colour = getInputVal('colour');
-    // console.log(colour);
     
-    saveInput(task, name, date, colour);
+    saveInput(task, name, date);
     document.getElementById('task').value = '';
     document.getElementById('name').value = '';
     document.getElementById('date').value = '';
-    // console.log(task, name)
     
 }
 
@@ -33,13 +30,12 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 
-function saveInput(task, name, date, colour){
+function saveInput(task, name, date){
     let savedTasks = taskRef.push();
     savedTasks.set({
         task:task,
         name:name,
-        date:date,
-        colour:colour
+        date:date   
     })
 }
 
@@ -67,53 +63,30 @@ taskRef.on("child_added", snap => {
     newDate.textContent = `${showDate}`;
     newHead.textContent = `${showName}`;
     newBody.textContent = `${showTask}`;
-    // NOT SURE WHAT THIS WAS
-    // taskList.appendChild(newTask);
 
-    // THIS IS A TEST:
+    //DISPLAYING ENTRIES
 
-    $('.messages').prepend(`<div id="entry"><p class="date">${showDate}</p> <h3>${showName}</h3><p class="entryBody">${showTask}</p></div>`);
+    $(".messages").prepend(`<div id="entry">
+            <div>
+                <p class="date">${showDate}</p> 
+                <h3>${showName}</h3>
+                <p class="entryBody">${showTask}</p>
+            </div>
+                <div><input type="checkbox" id="remove" name="remove"><label for="remove" class="removeMe">Remove</label></div>
+            </div>`);
 
-
-
-    // taskList.appendChild(newDate);
-    // taskList.appendChild(newHead);
-    // taskList.appendChild(newBody);
-   
     
 })
 
-// function newColour(){
-//     $('.entry').css('color', 'red');
-// }
 
-// let selectColor = $("#colour").val();
-// console.log(selectColor);
-
-
-// function changeColour(){
-//     const color = document.getElementById("colour").value;
-//     document.getElementById('entry').style.backgroundColor=color;
-// }
-
-// document.getElementById("post").addEventListener('click', changeColour);
-// console.log('click');
-
-// function changeClass(){ 
-//    $('.messages').on('click', 'entry', function(){
-//        console.log('esther');
-//    })
-// }
-$('#write').click(function(){
-    $('form').toggleClass('form-hide');
-    
-})
-
+// $('.messages').on('click', 'input', function(id){
+//     const itemRef = firebase.database().ref(`/yourTask/${id}`);
+//     itemRef.remove();
+//     removeItem();
+//     console.log(removeItem)
+// })
 
 $(function(){
-    // changeClass();
-    // changeColour();
-    // newColour();
-    // makeTable();
+    myFunction();
 })
     

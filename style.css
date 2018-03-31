@@ -6,28 +6,88 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     --entry-colour:#efefef;
     --body-font: 'Shadows Into Light Two', cursive;
     --heading-font: 'Raleway', sans-serif;
+    --body-bg: #f7e1db;
+    --main-bg:#d4cbd0;
 }
+
+body {
+    background:var(--main-bg);
+}
+header {
+    min-height:250px;
+    margin-bottom:50px; 
+    background:#a48d8b;
+    position: relative;
+    box-shadow: 0px 5px 5px 0px grey;
+}
+
+h1 {
+    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 36px;
+    margin:0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.menu {
+    line-height: 50px;
+    text-align: center;
+}
+
+ul {
+    margin-top:50px;
+    padding:0;
+    position: fixed;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+ul li{
+    list-style-type: none;
+    background:#939fb8;
+    margin-right:15px;
+    margin-top:25px;
+    padding-right:25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0px 5px 5px 0px grey;
+}
+ul li a {
+    position: relative;
+    color:black;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: var(--heading-font);
+    font-size: 18px;
+}
+
+a:hover{
+    left:15%;  
+}
+
 
 h2 {
     text-align: center;
 }
-
-form {
+.form {
     display:flex;
     flex-direction: column;
-    max-width:500px;
+    max-width:600px;
     width:100%;
     margin:0 auto;
     font-family: var(--heading-font);
+    background:var(--body-bg);
+    padding:50px 50px;
+    box-shadow: 5px 10px 15px 0px grey;
 }
-.form-hide{
-    display:none;
-}
+
 form input {
     padding:10px;
     margin:10px 0;
 }
-
 form label {
     padding:5px 0;
     text-transform: uppercase;
@@ -44,21 +104,44 @@ textarea {
     width:100%;
     margin:0 auto;
 }
-
+.messages {
+    background:var(--body-bg);
+    max-width: 600px;
+    width:100%;
+    margin:50px auto;
+    padding:50px 0;
+    box-shadow: 5px 10px 15px 0px grey;
+}
 #entry {
-    border:1px solid blue;
+    box-shadow: 5px 10px 15px -5px grey;
     max-width:500px;
     width:100%;
     margin: 25px auto;
     padding:20px;
+    background:url('assets/crumpled_paper.jpg');
 }
 
-button {
+.submit {
     max-width: 100px;
+    padding:20px;
+    background:white;
+    border:2px solid #adaeb0;
+    max-width:175px;
+    width:100%;
+    margin:25px auto 0;
+    display: flex;
+    text-align: center;
+    padding-left:60px;
+    transition:all 0.3s;
 }
+.submit:hover{
+    background:#939fb8;
+}
+
 .date {
     font-size:14px;
     font-family: var(--heading-font);
+    text-align: right;
 }
 
 h3 {
@@ -70,4 +153,5 @@ h3 {
 .entryBody {
     font-family: var(--body-font);
     letter-spacing: 2px;
+    font-size:20px;
 }
