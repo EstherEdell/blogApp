@@ -11,24 +11,22 @@
 <body>
     <header>
         <div class="wrapper">
-            <h1>BLOG POSTING</h1>
+            <h1>Recorder</h1>
+            <h2>The Simple Blog</h2>
         </div>
-        <nav>
-            <div class="menu" id="menu">
-                <ul>
-                    <li><a href="#form">Write</a></li>
-                    <li><a href="#post">Read</a></li>
-                    <li><a href="#">Home</a></li>
-                </ul>
-            </div>
-        </nav>
-        
     </header>
+
+    <nav class="default">
+        <ul>
+            <li><a href="#form">Write</a></li>
+            <li><a href="#post">Read</a></li>
+        </ul>
+    </nav>
 
    <main>
        <section class="wrapper">
            <form id="form" class="form">
-               <h2>What's on your mind today?</h2>
+               <h3>What's on your mind today?</h3>
                <label name="task">Entry Title</label>
                <input type="text" name="name" id="name">
                
@@ -43,9 +41,10 @@
        </section>
         <section class="messages" id="post">
             <!-- inputs go here -->
+            <a href="#"><img src="https://png.icons8.com/ios/50/000000/up3-filled.png">Top</a>
         </section>
    </main>
-    
+    <a href="https://icons8.com">Icon pack by Icons8</a>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="main.js"></script>

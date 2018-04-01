@@ -87,6 +87,6 @@ taskRef.on("child_added", snap => {
 // })
 
 $(function(){
-    myFunction();
+
 })
     
