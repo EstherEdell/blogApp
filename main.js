@@ -8,12 +8,16 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
 const taskRef = firebase.database().ref('yourTasks');
 
 document.getElementById('form').addEventListener('submit', submitForm);
 
 
 function submitForm(e){
+
+    //On submit, grab data from inputs
+
     e.preventDefault();
     let task = getInputVal('task');
     let name = getInputVal('name');
@@ -41,7 +45,7 @@ function saveInput(task, name, date){
 
 
 taskRef.on("child_added", snap => {
-//     //grab data from Firebase
+//grab data from Firebase
     const showTask = snap.child("task").val();
     const showName = snap.child("name").val();
     const showDate = snap.child("date").val();
@@ -58,8 +62,6 @@ taskRef.on("child_added", snap => {
 
     //add Data to page
 
-    
-    // THESE THREE WORK
     newDate.textContent = `${showDate}`;
     newHead.textContent = `${showName}`;
     newBody.textContent = `${showTask}`;
@@ -72,20 +74,16 @@ taskRef.on("child_added", snap => {
                 <h3>${showName}</h3>
                 <p class="entryBody">${showTask}</p>
             </div>
-                <div><input type="checkbox" id="remove" name="remove"><label for="remove" class="removeMe">Remove</label></div>
-            </div>`);
-
-    
+        </div>`);
+      
+    })
+ 
+$('a').click(function(e){
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+    e.preventDefault();
 })
-
-
-// $('.messages').on('click', 'input', function(id){
-//     const itemRef = firebase.database().ref(`/yourTask/${id}`);
-//     itemRef.remove();
-//     removeItem();
-//     console.log(removeItem)
-// })
-
 $(function(){
 
 })
